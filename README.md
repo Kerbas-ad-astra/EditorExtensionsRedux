@@ -3,6 +3,48 @@
 ##
 ##
 
+## Changes in 3.2.14
+	Updated values for KSP 1.1.3
+	center horizontally on z-axis with shift+H. (thanks OliverPA77)
+
+## Changes in 3.2.13
+	Fixed Fine Adjustments window (inability to close it or change the values)
+	Now saves both angle snap value and whether it was on/off after exiting editor session
+	Fixed issue with fine adjust translation wouldn't work if snap was on
+
+## Changes in 3.2.12
+	Fixed rotation gizmo to not angle snap when anglesnap is off
+	Replaced code which did FindObjectsOftype with GizmoEvents class for performance improvement
+	Updated FineAdjustments window to detect which gizmo is active
+
+## Changes in 3.2.11
+	Added 1/4 second delay in hiding menu
+
+## Changes in 3.2.10
+	Added UI scaling code to position of EEX menu
+	Fixed accidently disabling the ability to change the anglesnap on/off by clicking the sprite
+
+## Changes in 3.2.9
+	Removed old code from the FineAdjust Update function which was causing an exception
+	Reduced height of popup menu
+	Fixed bug where clicking on the symmetry sprite (the one which changes the angle snap degrees) when the angle was zero
+	would not allow surface attachments to anything other than the +z axis:
+		"I can place the battery only on the +z axis of the structure.  I cannot place it on -z, +x, -x"
+	Removed performance issue when Fine Adjustments window was shown
+	Reduced performance impact when fine adjustments are being done
+
+## Changes in 3.2.8
+	Added code from Fwiffo to fix bug where changing the angle snap while in rotate mode would not affect the rotate gizmo
+	Added code from Fwiffo for Rapid Zoom
+	Note:  Code from Fwiffo was modified to use the Reflection offsets rather than names to maintain compatibility with Linux & OSX
+	Fixed bug where going into the rotate gizmo the first time without changing the snap would have a rotation snap of 15 when it should have been zero
+
+	NEW FEATURE:  Fine Adjust
+	Fine Adjust window added
+	New config window for fine adjust keys
+	When Fine Adjust window is open, keys will do fine adjustments depending on which gizmo is selected:
+		Default keys:	arrow keys + rightShift & rightControl
+
 ## Changes in 3.2.7
 	Added code so that typing in text fields will be ignored by mod
 
@@ -36,6 +78,7 @@ Includes submods:
 * Reset hangar camera view
 * Customize hotkeys
 * CKAN & KSP-AVC versioning support
+* Rapid zoom mode when using keys to zoom (when using stock zoom mode)
 
 #### Vertical/Horizontal snap:
 * Place the part, then once the part is placed, hover over the part with your mouse and press the Vertical or Horizontal snap hotkey.
@@ -45,6 +88,11 @@ Includes submods:
 * Place the strut, then hover over the base/start of the strut (the first end placed) with the mouse, and press the hotkey.
 * Strut/FL start and end with be snapped to the closest of either the middle, quarter, or end of the part, aligned directly between the two parts.
 * Mod/Alt-U will reposition the strut/FL directly between the parts, but only level out the strut from the start/parent part.
+
+#### Rapid Zoom mode
+* Zoom in / out more rapidly by double-tapping the zoom in / out hotkey.  i.e. If you just hold down the "zoom in" hotkey, 
+  it works like normal.  But if you double-tap-hold, it zooms in at 5x the speed.  Releasing the hotkey sets zoom back to normal
+
 
 ### Default Keybindings
 * **V** 			- Vertically center a part. Place the part, hover over it with the mouse, and press the hotkey.
